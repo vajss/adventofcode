@@ -1,7 +1,9 @@
 // RUN: npx tsx day-1-1.ts 
 
-import fs from 'fs'
-const inputData = fs.readFileSync('./1-1-data.txt', 'utf-8')
+import fs from 'fs';
+import join from 'path';
+
+const inputData = fs.readFileSync("./puzzle-1-data.txt", 'utf-8');
 
 function isNumeric(value: string) {
     return /^-?\d+$/.test(value);
