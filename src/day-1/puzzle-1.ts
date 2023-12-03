@@ -1,7 +1,6 @@
 // RUN: npx tsx day-1-1.ts 
 
 import fs from 'fs';
-import join from 'path';
 
 const inputData = fs.readFileSync("./puzzle-1-data.txt", 'utf-8');
 
@@ -13,8 +12,8 @@ function sumOfCalibratedRows() {
     let totalSum = 0;
     let lineNumber = '';
     let allNumbersInOneLine: string[] = []
-    for (let index = 0; index < inputData.length; index++) {
-        if(inputData[index] == '\n') {
+    for (const element of inputData) {
+        if(element === '\n') {
             if(allNumbersInOneLine){
                 lineNumber = allNumbersInOneLine[0] + allNumbersInOneLine[allNumbersInOneLine.length - 1]
                 totalSum += Number(lineNumber)
@@ -24,8 +23,8 @@ function sumOfCalibratedRows() {
             continue
         }
 
-        if(isNumeric(inputData[index])){
-            allNumbersInOneLine.push(inputData[index])
+        if(isNumeric(element)){
+            allNumbersInOneLine.push(element)
         }
     }
     console.log(totalSum)
