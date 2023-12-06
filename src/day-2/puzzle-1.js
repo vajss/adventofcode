@@ -5,9 +5,9 @@ import fs from 'fs';
 
 const inputData = fs.readFileSync("./puzzle-2-data.txt", 'utf-8');
 
-function getOneTrysSum(oneHand: string[]) {
+function getOneTrysSum(oneHand) {
 
-  let oneHandSum: any = {
+  let oneHandSum = {
     'green': 0,
     'red': 0,
     'blue': 0
@@ -20,7 +20,7 @@ function getOneTrysSum(oneHand: string[]) {
   return oneHandSum;
 }
 
-function checkRow(row: string[]) {
+function checkRow(row) {
   let isValid = true;
   for (let index = 0; index < row.length; index++) {
     const element = row[index];

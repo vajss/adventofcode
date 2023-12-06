@@ -4,14 +4,14 @@ import fs from 'fs';
 
 const inputData = fs.readFileSync("./puzzle-1-data.txt", 'utf-8');
 
-function isNumeric(value: string) {
+function isNumeric(value) {
     return /^-?\d+$/.test(value);
 }
 
 function sumOfCalibratedRows() {
     let totalSum = 0;
     let lineNumber = '';
-    let allNumbersInOneLine: string[] = []
+    let allNumbersInOneLine = []
     for (const element of inputData) {
         if(element === '\n') {
             if(allNumbersInOneLine){

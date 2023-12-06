@@ -4,7 +4,7 @@ import fs from 'fs';
 
 const inputData = fs.readFileSync("./puzzle-1-data.txt", 'utf-8');
 
-const validTokensMap: Record<string, string> = {
+const validTokensMap = {
   'one': '1',
   'two': '2',
   'three': '3',
@@ -27,13 +27,13 @@ const validTokensMap: Record<string, string> = {
 
 function sumOfCalibratedRows() {
     let totalSum = 0;
-    let currentLineCharacters: string[] = []
+    let currentLineCharacters = []
     for (let index = 0; index < inputData.length; index++) {
         if(inputData[index] === '\n') {
           let currentLineString = currentLineCharacters.join("")
           let lineNumber = '';
-          let currentValidTokens: any[] = [];
-          let indexRecord: any[] = [];
+          let currentValidTokens = [];
+          let indexRecord = [];
 
           Object.keys(validTokensMap).forEach((key) => {
             const regex = new RegExp(key, 'g');
