@@ -1,5 +1,4 @@
-
-// RUN: npx tsx day-1-1.ts 
+// RUN: node puzzle-1.js
 
 import fs from 'fs';
 
