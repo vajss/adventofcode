@@ -1,5 +1,5 @@
 
-// RUN: npx tsx day-1-1.ts 
+// RUN: node puzzle-2.js 
 
 import fs from 'fs';
 
@@ -36,9 +36,7 @@ function getMinPerRow(row) {
 
     const sumObject = getMinimumPerHand(byColor);
 
-    console.log('sumObject: ', sumObject)
-
-    if(sumObject['red'] > Number(currentMin['red'])){ // mora se sabrati sve 
+    if(sumObject['red'] > Number(currentMin['red'])){
       currentMin['red'] = sumObject['red'];
     }
 
@@ -51,12 +49,10 @@ function getMinPerRow(row) {
     }
   }
 
-
   return currentMin;
 }
 
 function getPower(rowMin){
-  // console.log(rowMin)
   return Number(rowMin['red']) * Number(rowMin['green']) * Number(rowMin['blue'])
 }
 
@@ -77,8 +73,6 @@ function getSumOfMinimalPowers() {
     let allCubes = element.slice().split(';');
     
     let minPerRow = getMinPerRow(allCubes);
-    console.log(minPerRow)
-console.log('power: ', getPower(minPerRow))
     totalSumOfIds += getPower(minPerRow)
 
   }
