@@ -1,4 +1,4 @@
-// RUN: node puzzle-1.js
+// RUN: node puzzle-2.js
 
 import fs from 'fs';
 
