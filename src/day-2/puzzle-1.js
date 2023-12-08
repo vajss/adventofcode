@@ -43,14 +43,8 @@ function getPossibleGamesCount() {
   let totalSumOfIds = 0;
   for (let index = 0; index < gamesData.length; index++) {
     let element = null;
-    if(index < 9){
-      element = gamesData[index].slice(7)
-    } else if(index < 99) {
-      element = gamesData[index].slice(8)
-    } else {
-      element = gamesData[index].slice(9)
-    }
-    
+    element = gamesData[index].slice(":")[1]
+
     let allBalls = element.slice().split(';');
     totalSumOfIds += checkRow(allBalls) ? index + 1 : 0
 
