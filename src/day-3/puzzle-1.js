@@ -9,35 +9,27 @@ const validTokensArray = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 function checkIfpart(engineData, i, j){
 
   if(![...validTokensArray, '.', undefined].includes(engineData[i]?.[j-1])){
-    // console.log(engineData[i][j-1])
     return true;
   }
   if(![...validTokensArray, '.', undefined].includes(engineData[i-1]?.[j-1])){
-    // console.log(engineData[i-1][j-1])
     return true;
   }
   if(![...validTokensArray, '.', undefined].includes(engineData[i-1]?.[j])){
-    // console.log(engineData[i-1][j])
     return true;
   }
   if(![...validTokensArray, '.', undefined].includes(engineData[i-1]?.[j+1])){
-    // console.log(engineData[i-1][j+1])
     return true;
   }
   if(![...validTokensArray, '.', undefined].includes(engineData[i]?.[j+1])){
-    // console.log(engineData[i][j+1])
     return true;
   }
   if(![...validTokensArray, '.', undefined].includes(engineData[i+1]?.[j+1])){
-    // console.log(engineData[i+1][j+1])
     return true;
   }
   if(![...validTokensArray, '.', undefined].includes(engineData[i+1]?.[j])){
-    // console.log(engineData[i+1][j])
     return true;
   }
   if(![...validTokensArray, '.', undefined].includes(engineData[i+1]?.[j-1])){
-    // console.log(engineData[i+1]?.[j-1])
     return true;
   }
   return false
@@ -56,14 +48,11 @@ function getSumOfAllParts() {
       const element = engineData[i][j];
 
       if(validTokensArray.includes(element)){
-
         switchHappened = true;
 
         numberString += element;
         const isValid = checkIfpart(engineData, i, j);
         validList.push(isValid)
-
-
         continue
       }
 

@@ -1,4 +1,4 @@
-// RUN: ts-node-esm puzzle-2
+// RUN: node puzzle-2.js
 
 import fs from 'fs';
 
